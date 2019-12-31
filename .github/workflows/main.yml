@@ -1,7 +1,7 @@
 # GitHub Actions docs
 # https://help.github.com/en/articles/about-github-actions
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions
-name: Deploy
+name: Build and Deploy
 
 on:
   push:
@@ -22,10 +22,13 @@ jobs:
 
       - name: Install
         run: npm install -f
+
       # - name: Lint
       #   run: ./node_modules/.bin/ng lint
+
       - name: Build
-      #   run: ./node_modules/.bin/ng build --prod
+        run: ./node_modules/.bin/ng build --prod
+
       # - name: Test
       #   run: ./node_modules/.bin/ng test --configuration=ci
 
