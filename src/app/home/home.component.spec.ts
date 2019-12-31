@@ -1,10 +1,10 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeComponent } from "./home.component";
-import { RouterTestingModule } from "@angular/router/testing";
-import { HttpClientModule } from "@angular/common/http";
+import { HomeComponent } from './home.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 
-describe("HomeComponent", () => {
+describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
@@ -21,22 +21,22 @@ describe("HomeComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
   it(`should contain the correct title`, () => {
-    const fixture = TestBed.createComponent(HomeComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual("Scully Demo");
+    const fixture2 = TestBed.createComponent(HomeComponent);
+    const app = fixture2.componentInstance;
+    expect(app.title).toEqual('Scully Demo');
   });
 
-  it("should render title", () => {
-    const fixture = TestBed.createComponent(HomeComponent);
+  it('should render title', () => {
+    const fixture2 = TestBed.createComponent(HomeComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector(".content span").textContent).toContain(
-      "Scully Demo app is running!"
+    const compiled = fixture2.nativeElement;
+    expect(compiled.querySelector('.content span').textContent).toContain(
+      'Scully Demo app is running!'
     );
   });
 });

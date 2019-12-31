@@ -1,11 +1,11 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BlogComponent } from "./Blog.component";
-import { RouterTestingModule } from "@angular/router/testing";
-import { ComponentsModule } from "@scullyio/ng-lib";
-import { HttpClientModule } from "@angular/common/http";
+import { BlogComponent } from './Blog.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ComponentsModule } from '@scullyio/ng-lib';
+import { HttpClientModule } from '@angular/common/http';
 
-describe("BlogComponent", () => {
+describe('BlogComponent', () => {
   let component: BlogComponent;
   let fixture: ComponentFixture<BlogComponent>;
 
@@ -22,7 +22,7 @@ describe("BlogComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });
