@@ -29,8 +29,6 @@ jobs:
 
       - name: Build
         run: ./node_modules/.bin/ng build --prod
-
-      - name: Upload
         uses: actions/upload-artifact@v1
         with:
           name: build
