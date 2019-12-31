@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BlogComponent } from './Blog.component';
+import { BlogComponent } from './blog.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ComponentsModule } from '@scullyio/ng-lib';
 import { HttpClientModule } from '@angular/common/http';
