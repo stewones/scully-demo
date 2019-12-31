@@ -46,17 +46,18 @@ jobs:
     needs: [build]
     runs-on: ubuntu-18.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+      # - name: Checkout
+      #   uses: actions/checkout@v1
 
       - name: Download Artifact
         uses: actions/download-artifact@v1
         with:
           name: static
+          path: dist
 
       - name: Deploy to Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          # FOLDER:  # The folder the action should deploy.
+          FOLDER: dist # The folder the action should deploy.
