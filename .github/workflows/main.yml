@@ -27,26 +27,29 @@ jobs:
       # - name: Lint
       #   run: ./node_modules/.bin/ng lint
 
-      - name: Build
-        run: ./node_modules/.bin/ng build --prod
-
-      - name: Upload
-        uses: actions/upload-artifact@v1
-        with:
-          name: build
-          path: ./dist/static
-
       # - name: Test
       #   run: ./node_modules/.bin/ng test --configuration=ci
+
+      - name: Build Angular
+        run: ./node_modules/.bin/ng build --prod
+
+      - name: Build Scully
+        run: npm run scully
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: static
+          path: ./dist/static
 
   deploy:
     needs: [build]
     runs-on: ubuntu-18.04
     steps:
-      - name: Download
+      - name: Download Artifact
         uses: actions/download-artifact@v1
         with:
-          name: build
+          name: static
 
       - name: Deploy to Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
