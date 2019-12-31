@@ -8,6 +8,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor(private idle: IdleMonitorService) {}
-
-  title = 'scully-demo';
 }
