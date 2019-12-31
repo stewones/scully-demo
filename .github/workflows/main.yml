@@ -10,7 +10,7 @@ on:
       - master
 
 jobs:
-  build:
+  bootstrap:
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
@@ -24,12 +24,20 @@ jobs:
       - name: Install
         run: npm install -f
 
-      # - name: Lint
-      #   run: ./node_modules/.bin/ng lint
+  test:
+    needs: [bootstrap]
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Lint
+        run: ./node_modules/.bin/ng lint
 
-      # - name: Test
-      #   run: ./node_modules/.bin/ng test --configuration=ci
+      - name: Test
+        run: ./node_modules/.bin/ng test --configuration=ci
 
+  build:
+    needs: [bootstrap, test]
+    runs-on: ubuntu-18.04
+    steps:
       - name: Build Angular
         run: ./node_modules/.bin/ng build --prod
 
@@ -43,7 +51,7 @@ jobs:
           path: ./dist/static
 
   deploy:
-    needs: [build]
+    needs: [bootstrap, test, build]
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
