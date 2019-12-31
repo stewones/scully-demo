@@ -8,6 +8,8 @@ import { Observable } from "rxjs";
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
+  title = "Scully Demo";
+
   links$: Observable<any> = this.scully.available$;
 
   constructor(private scully: ScullyRoutesService) {}
