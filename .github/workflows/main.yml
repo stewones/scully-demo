@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: build
-          path: ./
+          path: ./dist/static
 
       # - name: Test
       #   run: ./node_modules/.bin/ng test --configuration=ci
@@ -53,4 +53,4 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: ./dist/static # The folder the action should deploy.
+          FOLDER: ./ # The folder the action should deploy.
